@@ -1,3 +1,9 @@
+/****************************************************
+ ********************* Importer *********************
+ ****************************************************/
+
+
+// Delete all contacts on phone
 function delPhonebook() {
   alert("Delete now Contacts database on Phone");
   var req;
@@ -14,7 +20,7 @@ function delPhonebook() {
 
 
 
-
+// get contact file
 function getContactFile(url) {
   var xhr = new XMLHttpRequest({
     mozSystem: true // use systemXHR
