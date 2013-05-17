@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <title>Contacts Importer</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  
+  <script src="js/CSV.js"></script>
+  <script src="js/OCSVtoMozContact.js"></script>
+  <script src="js/importer.js"></script>
+</head>
+<body>
+
+  <h3>Contacts Importer</h3>
+
+  <button id="file" onclick="getContactFile('http://nemixdre.free.fr/contacts.csv');">
+    Get Outlook CSV
+  </button>
+
+  <button id="delPhonebook" onclick="delPhonebook();">
+    Delete Phonebook
+  </button>
+
+  <p>
+    1. Go to your Gmail Contacts<br>
+    2. Export them with the "Outlook-CSV-Format" option<br>
+    3. Save the file to a webserver of your choice. Be sure the file is in UTF-8<br>
+    4. Press the "Get Outlook CSV" button and enter the url of your csv "http://www.yoursite/your_csv.csv
+  </p>
+</body>
+</html>

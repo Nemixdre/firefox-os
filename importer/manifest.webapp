@@ -1,0 +1,30 @@
+﻿{
+  "version": "0.1",
+  "name": "Contacts Importer",
+  "description": "Imports your Outlook CSV Contacts",
+  "icons": {
+    "16": "/img/icons/icon-16.png",
+    "48": "/img/icons/icon-48.png",
+    "128": "/img/icons/icon-128.png"
+  },
+  "developer": {
+    "name": "Audrey Colbrant",
+    "url": "http://be.linkedin.com/pub/audrey-colbrant/3a/a73/a22"
+  },
+  "launch_path": "/index.html",
+  "installs_allowed_from": ["*"],
+  "type": "privileged",
+  "permissions": {
+    "systemXHR": {
+      "description": "Required to download csv from server"
+    },
+    "contacts": {
+      "description": "Required to create contacts",
+      "access": "readcreate"
+    },
+    "contacts": {
+      "description": "Required to write contacts",
+      "access": "readwrite"
+    }
+  }
+}

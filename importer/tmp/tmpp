@@ -1,0 +1,70 @@
+interface ContactProperties {
+  attribute DOMString[]       name;     --contacts[i][0]contacts[i][2]
+  attribute DOMString[]       honorificPrefix;    --contacts[i][3]
+  attribute DOMString[]       givenName;          --contacts[i][0]
+  attribute DOMString[]       additionalName;     --contacts[i][1]
+  attribute DOMString[]       familyName;         --contacts[i][2]
+  attribute DOMString[]       honorificSuffix;    --contacts[i][4]
+  attribute DOMString[]       nickname;           contacts[i][]
+  attribute ContactField[]    email;    contacts[i][14]+contacts[i][15]+contacts[i][16]
+  attribute DOMString[]       photo;    contacts[i][]
+  attribute ContactField[]    url;      --contacts[i][6]
+  attribute DOMString[]       category;           contacts[i][]
+  attribute ContactAddress[]  adr;     --- 
+  Home= contacts[i][23] + contacts[i][24] + contacts[i][25] + contacts[i][26] + contacts[i][27] + contacts[i][28] + contacts[i][29] + contacts[i][30] + contacts[i][31] 
+  Business= contacts[i][49] + contacts[i][50] + contacts[i][51] + contacts[i][52] + contacts[i][53] + contacts[i][54] + contacts[i][55] + contacts[i][56] + contacts[i][57]
+  Other= contacts[i][60] + contacts[i][61] + contacts[i][62] + contacts[i][63] + contacts[i][64] + contacts[i][65] + contacts[i][66] + contacts[i][67] + contacts[i][68] 
+
+  attribute ContactTelField[] tel;   ---   contacts[i][17] + contacts[i][18] + contacts[i][19] + contacts[i][20] + contacts[i][37] + contacts[i][38] + contacts[i][39] + contacts[i][41] + contacts[i][58] + contacts[i][70] + contacts[i][72] + contacts[i][73]
+
+  attribute DOMString[]       org;      contacts[i][]
+  attribute DOMString[]       jobTitle;           --contacts[i][43] /* 'title' from vCard made specific */
+  attribute Date    bday;     --contacts[i][8]
+  attribute DOMString[]       note;     --contacts[i][13]
+  attribute ContactField[]    impp;     contacts[i][] /* per RFC 4770, included in vCard4 */
+  attribute Date    anniversary;        --contacts[i][9] /* new in vCard4 */
+  attribute DOMString         sex;      contacts[i][] /* new in vCard4, gender sub-component 1 */
+  attribute DOMstring         genderIdentity;     --contacts[i][7] /* new in vCard4, gender sub-comp 2 */
+  attribute DOMString[]       key;      contacts[i][] /* takes a key URI per RFC6350 6.8.1 */
+ }; 
+
+
+
+
+interface ContactAddress {
+  attribute DOMString[]  type; // "home", "work", etc.
+  attribute boolean      pref; // false = no pref, true = preferred (vCard3 TYPE:PREF; vCard4 PREF:1)
+  attribute DOMString    streetAddress;
+  attribute DOMString    locality;
+  attribute DOMString    region;
+  attribute DOMString    postalCode;
+  attribute DOMString    countryName;
+};
+
+"+--Home Address: " + contacts[7][23] + '<br>' +
+"+Home Street: " + contacts[7][24] + '<br>' +
+"+Home Street 2: " + contacts[7][25] + '<br>' +
+"+Home Street 3: " + contacts[7][26] + '<br>' +
+"+Home Address PO Box: " + contacts[7][27] + '<br>' +
+"+--Home City: " + contacts[7][28] + '<br>' +
+"+--Home State: " + contacts[7][29] + '<br>' +
+"+--Home Postal Code: " + contacts[7][30] + '<br>' +
+"+--Home Country: " + contacts[7][31] + '<br>' 
+
+
+
+ interface ContactField : nsISupports
+ {
+   attribute DOMString[] type;   // "home", "work", etc.
+   attribute DOMString   value;
+   attribute boolean     pref; // false = no pref, true = preferred (vCard3 TYPE:PREF; vCard4 PREF:1)
+ };
+
+ interface ContactTelField : ContactField
+ {
+   attribute DOMString carrier; // experimental extension - not in vCard! 
+ };
+
+
+
+
