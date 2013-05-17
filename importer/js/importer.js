@@ -18,19 +18,23 @@ function delPhonebook() {
 }
 
 
-// get contact file
+// get contact file from given url
 function getContactFile(url) {
   var xhr = new XMLHttpRequest({
     mozSystem: true // use systemXHR
   });
   xhr.addEventListener('load', function() {
+
+    // TODO: 
+    //if(outlook csv)
+    //{
     var contacts = CSVToArray(xhr.response);
-    
 
     for(var i = 0; i<contacts.length;i++)
     {
       saveCSVContactInPhone(contacts[i]);
     }
+    //}
   });
   xhr.open('GET', url, true);
 

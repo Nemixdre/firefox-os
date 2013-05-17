@@ -1,3 +1,10 @@
+/****************************************************
+ ******** Outlook CSV to MozContact Converter *******
+ ****************************************************/
+
+
+// MozContact API: // https://wiki.mozilla.org/WebAPI/ContactsAPI#Example
+// Outlook CSV Headers: 
 // "+First Name: " + mContact[0] + '<br/>' +
 // "+Middle Name: " + mContact[1] + '<br/>' +
 // "+Last Name: " + mContact[2] + '<br/>' +
@@ -88,7 +95,7 @@
 // "Categories : " + mContact[87] + '<br/>' ;
 
 
-
+// Create and save a MozContact from an Outlook CSV contact
 function saveCSVContactInPhone(mContact) {
   var contact = new mozContact();
   
