@@ -5,7 +5,9 @@ FIXME:
 
 TODO:
 - Design (schniarf, screunf, schniouf !)
-- Other import formats
-- Find a more suitable icon (nice, not a pixel-crapy-thing to resize)
+- Other import formats (vCards, Google CSV, ...)
+- Find a more suitable icon (a nice one, not a pixel-crapy-thing)
+- Renaming file like_that.ext instead of likeThat.ext
+- Fighting with gjslint
 
 [1] https://wiki.mozilla.org/WebAPI/ContactsAPI#Example
